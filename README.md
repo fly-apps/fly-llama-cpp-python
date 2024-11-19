@@ -6,12 +6,12 @@ fly apps create my-llama-app
 
 Launch a machine
 ```
-fly m run --region ord --vm-size l40s .
+fly m run -a my-llama-app --region ord --vm-size l40s .
 ```
 
 Once it is started, ssh into it:
 ```
-fly ssh console -s
+fly ssh console -a my-llama-app -s
 ```
 
 and run test codes:
@@ -23,16 +23,5 @@ and run test codes:
 
 check machine logs with
 ```
-fly logs
+fly logs -a my-llama-app
 ```
-
-if by any case you see an error message about missing devices:
-```
-[info]ERROR Error: an unhandled error occurred: No such device (os error 19)
-```
-
-force a machine update with:
-```
-fly m update --metadata foo=any MACHINEID
-```
-
