@@ -9,7 +9,7 @@ RUN apt update -qq && apt install -qy cuda-nvcc-12-3 cuda-profiler-api-12-3 libc
 RUN pip install pycuda
 
 # llama-cpp-python
-RUN apt update -qq && apt install -qy libcublas-dev-12-3 
+RUN apt update -qq && apt install -qy libcublas-12-3 
 RUN pip install  --only-binary ':all:' llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu123
 
 # ldconfig is important to update dynlib cache
